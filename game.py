@@ -11,8 +11,8 @@ while True:
     guesses = guesses + 1
     if guess > secretnum:
         print("Sorry, too high")
-    if guess < secretnum:
+    elif guess < secretnum:
         print("Sorry, too low")
-    if guess == secretnum:
+    elif guess == secretnum:
         print(f"Well done {name}, you got it in {guesses} tries!")
         break
