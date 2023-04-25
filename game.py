@@ -11,19 +11,22 @@ while True:
     guesses = 0
     while True:
         guess = input("Whats your guess?")
-        guess = int(guess)
-        guesses = guesses + 1
-        if guess <= 100 and guess >=1:
-            if guess > secretnum:
-                print("Sorry, too high")
-            elif guess < secretnum:
-                print("Sorry, too low")
-            elif guess == secretnum:
-                print(f"Well done {name}, you got it in {guesses} tries!")
-                break
-        else: 
-            print("That is not within the range, don't cheat! Please enter a number between 1-100")
-
+        if guess.isdigit():
+            guess = int(guess)
+            guesses = guesses + 1
+            if guess <= 100 and guess >=1:
+                if guess > secretnum:
+                    print("Sorry, too high")
+                elif guess < secretnum:
+                    print("Sorry, too low")
+                elif guess == secretnum:
+                    print(f"Well done {name}, you got it in {guesses} tries!")
+                    break
+            else: 
+                print("That is not within the range, don't cheat! Please enter a number between 1-100")
+        else:
+            print("Invalid input numbers only")
+            
     if guesses < save_guesses: 
         save_guesses = guesses      
     print(f"Your current high score is: {save_guesses}")
