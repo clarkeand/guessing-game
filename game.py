@@ -16,11 +16,14 @@ while True:
     secretnum = random.randint(low_num,high_num)
     # print(secretnum)
     guesses = 0
-    while guesses < 10:
+    while True:
         guess = input("Whats your guess?")
         if guess.isdigit():
             guess = int(guess)
             guesses = guesses + 1
+            if guesses == 10:
+                print("You ran out of guesses sorry")
+                break
             if guess <= high_num and guess >= low_num:
                 if guess > secretnum:
                     print("Sorry, too high")
@@ -28,12 +31,11 @@ while True:
                     print("Sorry, too low")
                 elif guess == secretnum:
                     print(f"Well done {name}, you got it in {guesses} tries!")
+                    break
             else: 
                 print("That is not within the range, don't cheat! Please enter a number between 1-100")
         else:
             print("Invalid input numbers only")
-    if guesses == 10:
-        print("You ran out of guesses sorry")
 
     if guesses < save_guesses: 
         save_guesses = guesses      
