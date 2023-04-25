@@ -4,9 +4,16 @@ name = input("Howdy what's your name?")
 save_guesses = 100 
 
 while True: 
-    print(f"{name} I'm thinking of a number between 1 and 100.")
+    usernum = input("Do you want to set the range of numbers to guess? Y/N")
+    if usernum == "Y" or usernum == "y":
+       low_num = input("Whats the lowest number?")
+       high_num = input("Whats the highest number?")
+    else:
+        low_num = 1
+        high_num = 100
+    print(f"{name} I'm thinking of a number between {low_num} and {high_num}.")
     print("Can you guess my number?")
-    secretnum = random.randint(1,100)
+    secretnum = random.randint(low_num,high_num)
     # print(secretnum)
     guesses = 0
     while guesses < 10:
@@ -14,7 +21,7 @@ while True:
         if guess.isdigit():
             guess = int(guess)
             guesses = guesses + 1
-            if guess <= 100 and guess >=1:
+            if guess <= high_num and guess >= low_num:
                 if guess > secretnum:
                     print("Sorry, too high")
                 elif guess < secretnum:
