@@ -7,7 +7,7 @@ while True:
     print("Can you guess my number?")
     secretnum = random.randint(1,101)
     guesses = 0
-    save_guesses = 0 
+    save_guesses = 100 
     while True:
         guess = input("Whats your guess?")
         guess = int(guess)
