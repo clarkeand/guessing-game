@@ -1,13 +1,13 @@
 """A number-guessing game."""
 import random
 name = input("Howdy what's your name?")
-save_guesses = 100 
+save_guesses = 11 
 
 while True: 
     usernum = input("Do you want to set the range of numbers to guess? Y/N")
     if usernum == "Y" or usernum == "y":
-       low_num = input("Whats the lowest number?")
-       high_num = input("Whats the highest number?")
+       low_num = int(input("Whats the lowest number?"))
+       high_num = int(input("Whats the highest number?"))
     else:
         low_num = 1
         high_num = 100
