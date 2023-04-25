@@ -33,7 +33,7 @@ while True:
                     print(f"Well done {name}, you got it in {guesses} tries!")
                     break
             else: 
-                print("That is not within the range, don't cheat! Please enter a number between 1-100")
+                print(f"That is not within the range, don't cheat! Please enter a number between {low_num}-{high_num}")
         else:
             print("Invalid input numbers only")
 
